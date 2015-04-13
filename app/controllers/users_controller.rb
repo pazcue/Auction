@@ -11,6 +11,7 @@ class UsersController < ApplicationController
 		size = User.where(email: user_params[:email]).size
 
 		if size > 0 
+			session[:user_id] = User.find_by(email: user_params[:email]).id
 			redirect_to controller: 'items', action: 'index'
 		else
 			@user = User.new user_params
@@ -20,7 +21,7 @@ class UsersController < ApplicationController
 
 				redirect_to controller: 'items', action: 'index'
 			else 
-				render 'home'
+				render 'users/home'
 			end
 		end
 	end

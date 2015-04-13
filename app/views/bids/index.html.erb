@@ -1,0 +1,10 @@
+<h1> bids on <%= @item.name %> </h1>
+<ol>
+<% @bids.each do |bid| %>
+	<li>$<%= bid.bid_amount %> bid by: <%= bid.user.email %></li><br>
+
+<% end %>
+
+</ol>
+<%= link_to("add new bid", bidnew_path(params[:id])) %>
+<%= link_to("Market", items_all_path)%>

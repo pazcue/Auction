@@ -1,0 +1,11 @@
+<h1> what the market has to offer: </h1>
+<ol>
+<p> <% @items.each do |item| %>
+	<li><strong>Name:</strong> <%= item.name %> <br>
+	<strong>Description:</strong> <%= item.description %><br>
+	<strong>Starting price: </strong><%= item.starting_price %><br>
+	<strong>Expiration date: </strong><%= item.expiration_date %><br>
+	<%= link_to("bid on me", bids_path(item.id)) %><br><br></li>
+	<% end %>
+</ol>
+</p>

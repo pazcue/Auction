@@ -1,0 +1,8 @@
+<h1> New Bid for <%= @item.name %><br> </h1>
+<%= form_for [@bid] do |f| %>
+ 	<%= f.label :bid_amount %>
+	<%= f.number_field :bid_amount, in: 1..1000%>
+	<%= f.submit 'submit' %>
+<% end %> 
+
+<%= link_to("Market",items_all_path)%>

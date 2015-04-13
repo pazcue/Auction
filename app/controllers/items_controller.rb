@@ -15,7 +15,14 @@ class ItemsController < ApplicationController
   end
 
   def index
+  	# where users see their own items for sale
   	@items = Item.where(user_id: session[:user_id])
+  	@user = User.find(session[:user_id]).email
+  end
+
+  def globalindex
+  	@items = Item.all
+  	# where users see ALL items that they can bid on 
   end
 
   def edit
