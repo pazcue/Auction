@@ -1,0 +1,9 @@
+<h1>Items#index</h1>
+<p> <% @items.each do |item| %>
+	<strong>Name:</strong> <%= item.name %> <br>
+	<strong>Description:</strong> <%= item.description %><br>
+	<strong>Starting price: </strong><%= item.starting_price %><br>
+	<strong>Expiration date: </strong><%= item.expiration_date %><br><br>
+	<% end %>
+</p>
+<%= link_to("add new item", items_new_path) %>
